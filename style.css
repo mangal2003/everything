@@ -1,0 +1,359 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #fff5f5;
+  margin: 0;
+  padding: 0;
+  color: #d81b60;
+  min-height: 100vh;
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="%23ff4081" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>'),
+    auto;
+}
+
+/* Cursor heart trail effect */
+.cursor-heart {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+  z-index: 9999;
+  animation: float-up 1s forwards;
+  opacity: 0.8;
+}
+
+@keyframes float-up {
+  0% {
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -150%) scale(1);
+    opacity: 0;
+  }
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Tab system */
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tab-btn {
+  background-color: #ffebee;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #d81b60;
+}
+
+.tab-btn:hover {
+  background-color: #ffcdd2;
+}
+
+.tab-btn.active {
+  background-color: #d81b60;
+  color: white;
+  font-weight: bold;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Typing effect */
+.typing-text {
+  display: inline;
+  position: relative;
+}
+
+.typing-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 1em;
+  background-color: #d81b60;
+  margin-left: 2px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Message boxes */
+.message-box {
+  margin: 1.5rem 0;
+  padding: 20px;
+  background-color: #fff9f9;
+  border-radius: 10px;
+  border-left: 4px solid #ff4081;
+}
+
+.hidden-messages {
+  margin-top: 20px;
+  display: none;
+}
+
+.hidden-messages p {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #ffebee;
+  border-radius: 5px;
+}
+
+/* Buttons */
+.apology-controls {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.apology-controls button {
+  background-color: #d81b60;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.apology-controls button:hover {
+  background-color: #c2185b;
+  transform: scale(1.05);
+}
+
+.apology-controls button:disabled {
+  background-color: #9e9e9e;
+  cursor: not-allowed;
+}
+
+/* Heart animations */
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #ff4081;
+  transform: rotate(45deg);
+  animation: float 4s ease-in-out infinite;
+}
+
+.heart:before,
+.heart:after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: #ff4081;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.heart:before {
+  top: -10px;
+  left: 0;
+}
+
+.heart:after {
+  top: 0;
+  left: -10px;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: rotate(45deg) translateY(0);
+  }
+  50% {
+    transform: rotate(45deg) translateY(-20px);
+  }
+}
+
+/* Effects container */
+#effectsContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+/* Forgiveness Meter */
+.forgiveness-meter {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border: 2px solid #ff4081;
+  text-align: center;
+}
+
+.progress-bar {
+  height: 25px;
+  background: #ffe6e6;
+  border-radius: 12px;
+  margin: 10px 0;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(to right, #ff4081, #d81b60);
+  border-radius: 12px;
+  transition: width 0.5s ease;
+  width: 0%;
+}
+
+.progress-percent {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #d81b60;
+  margin-top: 10px;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+  .container {
+    width: 95%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .tabs {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .tab-btn {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+
+  .message-box {
+    padding: 15px;
+    margin: 1rem 0;
+  }
+
+  .hidden-messages p {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .apology-controls {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .apology-controls button {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .forgiveness-meter {
+    padding: 15px;
+  }
+
+  .progress-bar {
+    height: 20px;
+  }
+
+  .progress-percent {
+    font-size: 1rem;
+  }
+}
+
+/* Extra small devices (phones, 400px and down) */
+@media (max-width: 400px) {
+  .container {
+    width: 98%;
+    padding: 8px;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  .tab-btn {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+
+  .message-box {
+    padding: 10px;
+  }
+
+  .hidden-messages p {
+    font-size: 0.8rem;
+  }
+
+  .apology-controls button {
+    padding: 0.5rem 0.8rem;
+  }
+}
+
+/* Tablet devices (600px to 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+  .container {
+    width: 85%;
+  }
+
+  .tabs {
+    gap: 8px;
+  }
+
+  .tab-btn {
+    padding: 8px 16px;
+  }
+}
+
+/* Prevent zoom on input focus for mobile */
+@media (max-width: 600px) {
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+}
+
+/* Orientation-specific styles */
+@media screen and (orientation: landscape) and (max-width: 900px) {
+  .container {
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+}

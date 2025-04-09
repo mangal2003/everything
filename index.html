@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Bachha ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>For My Bachha ❤️</h1>
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="apology">Apology</button>
+            <button class="tab-btn" data-tab="respect">Respect</button>
+            <button class="tab-btn" data-tab="care">Care</button>
+            <button class="tab-btn" data-tab="love">Love</button>
+        </div>
+
+        <div class="message-box tab-content active" data-tab="apology">
+            <p class="message">I'm truly sorry for upsetting you...</p>
+            <div class="hidden-messages">
+                <p>You mean the world to me</p>
+                <p>I promise to do better</p>
+                <p>Will you forgive me?</p>
+            </div>
+            <div class="apology-controls">
+                <button id="apologyBtn">Click for my apology</button>
+                <button id="forgiveBtn">Forgive Me</button>
+                <button id="hugBtn">Send Virtual Hug</button>
+            </div>
+            <div class="forgiveness-meter">
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <div class="progress-percent">0%</div>
+            </div>
+        </div>
+
+        <div class="message-box tab-content" data-tab="respect">
+            <p>I respect you for your:</p>
+            <p>- Strength and resilience</p>
+            <p>- Kindness and compassion</p>
+            <p>- Intelligence and wisdom</p>
+            <p>- Beautiful heart and soul</p>
+        </div>
+
+        <div class="message-box tab-content" data-tab="care">
+            <p>I care about:</p>
+            <p>- Your happiness and well-being</p>
+            <p>- Your dreams and aspirations</p>
+            <p>- Your comfort and peace</p>
+            <p>- Every little thing that matters to you</p>
+        </div>
+
+        <div class="message-box tab-content" data-tab="love">
+            <p>I love:</p>
+            <p>- Your smile and laughter</p>
+            <p>- The way you make me feel</p>
+            <p>- Our special moments together</p>
+            <p>- Everything about you</p>
+        </div>
+
+        <div class="heart-container" id="heartContainer"></div>
+        <div id="effectsContainer"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
